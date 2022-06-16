@@ -118,9 +118,114 @@
                     <article class="commodity_text_style">4SPN 2-11P</article>
                 </div>
             </div>
-<!-- 
+
+            <!-- 切换按钮 -->
             <div v-on:click="ListButton1" class="list_button" id="list_button1"></div>
-            <div v-on:click="ListButton2" class="list_button1" id="list_button2"></div> -->
+            <div v-on:click="ListButton2" class="list_button1" id="list_button2"></div>
+
+            
+            <!-- 蓝色背景 -->
+            <div class="Blue_background">
+                <div class="Blue_background_style1">
+                    <div class="First_paragraph">
+                        <article class="First_paragraph_text1">15</article>
+                        <article class="First_paragraph_text2">Years</article>
+                    </div>
+                    
+                    <div class="First_paragraph">
+                        <article class="First_paragraph_text3">Industrial experience</article>
+                    </div>
+                    
+                    <div class="First_paragraph">
+                        <article class="First_paragraph_text4">More than 15 years experience in R & D and</article>
+                        <article class="First_paragraph_text5">manufacturing of solar pump</article>
+                    </div>
+                </div>
+
+                <div class="Vertical_line_style"></div>
+
+                <div class="Vertical_line_style2">
+                    <div class="Blue_background_style2">
+                        <article class="First_paragraph_text1">11</article>
+                        <article class="First_paragraph_text2">Items</article>
+                    </div>
+                    <div>
+                        <article class="First_paragraph_text3">Patented technology</article>
+                    </div>
+                    <div>
+                        <article class="First_paragraph_text4">Have an independent R & D team, strong R &</article>
+                        <article class="First_paragraph_text5">D capabilities</article>
+                    </div>
+                </div>
+
+                <div class="Vertical_line_style"></div>
+
+                <div class="Vertical_line_style3">
+                    <div class="Blue_background_style2">
+                        <article class="First_paragraph_text1">1000</article>
+                        <article class="First_paragraph_text2">+</article>
+                    </div>
+                    <div>
+                        <article class="First_paragraph_text3">Overseas customers</article>
+                    </div>
+                    <div>
+                        <article class="First_paragraph_text4">Served more than 1000 overseas customers</article>
+                        <article class="First_paragraph_text5">around the world</article>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 制作图 -->
+            <div>
+                <article class="TOP_SALE">OUR ADVANTAGES</article>
+                <div>
+                    <div>
+                        <img src="../assets/制作图1.png" alt="" class="Fabrication_drawing_style"/>
+                        <div class="text_Fabrication_drawing_style">
+                            <article class="text_Fabrication_drawing_style_text1">Competitive price</article>
+                            <article class="text_Fabrication_drawing_style_text2">We are a leading R & D and manufacturer of solar water pumps</article>
+                            <article class="text_Fabrication_drawing_style_text3">in China, with dozens of patented technologies, large-scale</article>
+                            <article class="text_Fabrication_drawing_style_text4">standardized production, direct sales and more competitive</article>
+                            <article class="text_Fabrication_drawing_style_text5">prices.</article>
+                        </div>
+                    </div>
+
+                    <div>
+                        
+                        <div class="text_Fabrication_drawing_style1">
+                            <article class="text_Fabrication_drawing_style_text1">CReliable quality</article>
+                            <article class="text_Fabrication_drawing_style_text2">The company has passed ISO9001 & ISO14001 certification, and</article>
+                            <article class="text_Fabrication_drawing_style_text3">the products have passed CE / TUV SUD / SGS quality inspection,</article>
+                            <article class="text_Fabrication_drawing_style_text4">with excellent quality and reliable performance.</article>
+                        </div>
+                        <img src="../assets/制作图2.png" alt="" class="Fabrication_drawing_style"/>
+                    </div>
+
+                     <div>
+                        <img src="../assets/制作图3.png" alt="" class="Fabrication_drawing_style"/>
+                        <div class="text_Fabrication_drawing_style">
+                            <article class="text_Fabrication_drawing_style_text1">Customized on demand</article>
+                            <article class="text_Fabrication_drawing_style_text2">We provide nearly 500 kinds of solar pump models, including DC,</article>
+                            <article class="text_Fabrication_drawing_style_text3">pumps, and can provide customized services according to the</article>
+                            <article class="text_Fabrication_drawing_style_text4">needs of customers.</article>
+                        </div>
+                    </div>
+
+                     <div>
+                        
+                        <div class="text_Fabrication_drawing_style1">
+                            <article class="text_Fabrication_drawing_style_text1">Fast delivery</article>
+                            <article class="text_Fabrication_drawing_style_text2">We have a complete R & D, manufacturing and quality testing,</article>
+                            <article class="text_Fabrication_drawing_style_text3">twarehousing and logistics links, stable production capacity,</article>
+                            <article class="text_Fabrication_drawing_style_text4">efficient order processing capacity, to meet the needs of</article>
+                            <article class="text_Fabrication_drawing_style_text4">customers for rapid delivery.</article>
+                        </div>
+                        <img src="../assets/制作图4.png" alt="" class="Fabrication_drawing_style"/>
+                    </div>
+                </div>
+
+                
+            </div>
         </main>
     </div>
 </template>
@@ -131,7 +236,19 @@
 // 轮播图
 export default {
   methods: {
-    
+    ListButton1: function () {
+        document.getElementById('Commodity_div2').style.display="none";
+        document.getElementById('Commodity_div1').style.display="block";
+        document.getElementById('list_button1').style.backgroundColor="orange"
+        document.getElementById('list_button2').style.backgroundColor="white"
+    },
+
+    ListButton2: function () {
+        document.getElementById('Commodity_div1').style.display="none";
+        document.getElementById('Commodity_div2').style.display="block";
+        document.getElementById('list_button2').style.backgroundColor="orange"
+        document.getElementById('list_button1').style.backgroundColor="white"
+    }
   },
 };
 
@@ -374,8 +491,8 @@ body{
 
 .TOP_SALE{
     letter-spacing:5px;
-    font-weight:bold;
-    font-size: 30px;
+    font-weight: 600;
+    font-size: 35px;
     text-align: center;
     margin: 50px 0;
 }
@@ -426,21 +543,16 @@ body{
 }
 
 .list_button{
-    list-style-type: none;
     width: 20px;
     height: 20px;
-    background-color: white;
     display: inline-block;
     border: 1px solid orange;
     border-radius: 50%;
-    margin-left: 716px;
-    margin-bottom: 100px;
-    cursor:pointer;
+    margin-left: 17px;
     background-color: orange;
 }
 
 .list_button1{
-    list-style-type: none;
     width: 20px;
     height: 20px;
     background-color: white;
@@ -448,8 +560,6 @@ body{
     border: 1px solid orange;
     border-radius: 50%;
     margin-left: 20px;
-    margin-bottom: 100px;
-    cursor:pointer;
 }
 
 #Commodity_div2{
@@ -472,6 +582,129 @@ body{
 .ant-carousel >>> .slick-dots-bottom {
     bottom: 36px;
 }
+
+.Blue_background{
+    width: 100%;
+    height: 300px;
+    background-color: rgb(71, 135, 231);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+
+.Blue_background_style1{
+    display: inline-block;
+}
+
+.First_paragraph_text1{
+    font-size: 63px;
+    display: inline-block;
+    color: white;
+    font-weight: 600;
+}
+
+.First_paragraph_text2{
+    font-size: 63px;
+    display: inline-block;
+    color: orange;
+    font-weight: 600;
+}
+
+.First_paragraph_text3{
+    font-size: 26px;
+    margin-top: -20px;
+    color: orange;
+    margin-left: -7px;
+}
+
+.First_paragraph_text4{
+    color: white;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.First_paragraph_text5{
+    color: white;
+    font-size: 15px;
+}
+
+.Vertical_line_style{
+    background-color: white;
+    width: 1px;
+    height: 215px;
+}
+
+.Blue_background_style1{
+    margin-left: 162px;
+}
+
+.Vertical_line_style3{
+    margin-right: 136px;
+}
+
+.Fabrication_drawing_style{
+    height: 300px;
+    vertical-align: bottom;
+}
+
+
+
+.text_Fabrication_drawing_style{
+    display: inline-block;
+    width: 600px;
+    height: 300px;
+    background-color: rgba(206, 197, 197, 0.988);
+}
+
+.text_Fabrication_drawing_style::before{
+    position: absolute;
+    content: "";
+    right: 0;
+    bottom: 0;
+    width: 0px;
+    height: 0px;
+    border-bottom: 46px solid rgb(251, 141, 16);
+    border-left: 19px solid orange;
+    border-bottom-right-radius: 4px;
+}
+
+.text_Fabrication_drawing_style1{
+    display: inline-block;
+    width: 600px;
+    height: 300px;
+    background-color: orange;
+}
+
+.text_Fabrication_drawing_style_text1{
+    font-size: 31px;
+    margin-top: 35px;
+    margin-bottom: 40px;
+}
+
+.text_Fabrication_drawing_style_text2{
+    font-size: 18px;
+}
+
+.text_Fabrication_drawing_style_text3{
+    font-size: 18px;
+    margin-left: -33px;
+}
+
+
+.text_Fabrication_drawing_style_text4{
+    font-size: 18px;
+    margin-left: -33px;
+}
+
+
+.text_Fabrication_drawing_style_text5{
+    font-size: 18px;
+    margin-left: -447px;
+}
+
 
 
  
