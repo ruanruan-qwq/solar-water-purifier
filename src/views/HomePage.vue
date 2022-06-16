@@ -59,11 +59,12 @@
         </header>
 
         <main>
-            <el-carousel :height="613 + 'px'" trigger="click">
-                <el-carousel-item v-for="item in imgwrap" :key="item.url">
-                    <img :src="item.url" class="bannerimg"/>
-                </el-carousel-item>
-            </el-carousel>
+            <a-carousel autoplay>
+                <div><h3><img src="../assets/背景图1.png" alt="" class="Background_image_style"></h3></div>
+                <div><h3><img src="../assets/背景图2.png" alt="" class="Background_image_style"></h3></div>
+                <div><h3><img src="../assets/背景图3.png" alt="" class="Background_image_style"></h3></div>
+                <div><h3><img src="../assets/背景图4.png" alt="" class="Background_image_style"></h3></div>
+            </a-carousel>
 
             <article class="TOP_SALE">TOP SALE</article>
 
@@ -117,9 +118,9 @@
                     <article class="commodity_text_style">4SPN 2-11P</article>
                 </div>
             </div>
-
+<!-- 
             <div v-on:click="ListButton1" class="list_button" id="list_button1"></div>
-            <div v-on:click="ListButton2" class="list_button1" id="list_button2"></div>
+            <div v-on:click="ListButton2" class="list_button1" id="list_button2"></div> -->
         </main>
     </div>
 </template>
@@ -129,51 +130,18 @@
 
 // 轮播图
 export default {
-    data(){
-        return{
-            bannerHeight: 200,
-            imgwrap:[
-                {url:require("../assets/背景图1.png")},
-                {url:require("../assets/背景图2.png")},
-                {url:require("../assets/背景图3.png")},
-                {url:require("../assets/背景图4.png")},
-                {url:require("../assets/背景图5.png")}
-            ]
-        }
-    },
-     mounted(){
-       this.setSize();
-       window.addEventListener('resize', ()=>{
-         this.setSize();
-       },false);       
+  methods: {
+    
   },
-  methods:{
-    setSize(){
-      this.bannerHeight = document.body.clientWidth
-    },
+};
 
-    ListButton1 () {
-        document.getElementById('Commodity_div2').style.display = 'none';
-        document.getElementById('list_button2').style.backgroundColor = 'white';
-        document.getElementById('Commodity_div1').style.display = 'block';
-        document.getElementById('list_button1').style.backgroundColor = 'orange'
-    },
 
-    ListButton2 () {
-        document.getElementById('Commodity_div2').style.display = 'block';
-        document.getElementById('list_button2').style.backgroundColor = 'orange'
-        document.getElementById('Commodity_div1').style.display = 'none';
-        document.getElementById('list_button1').style.backgroundColor = 'white';
-
-    }
-  }
-}
 
 
 </script>
 
 
-<style>
+<style scoped>
 
 body{
     margin: 0;
@@ -183,7 +151,7 @@ body{
     margin-top: 0;
     background-color: white;
     width: 100%;
-    height: 130px;
+    height: 100px;
  }
 
  .content{
@@ -272,19 +240,22 @@ body{
  .header_bottom{
     padding-left: 136px;
     padding-top: 10px;
+    position: relative;
  }
 
  .SAMKING_style{
     height: 55px;
     width: 224px;
+    position: absolute;
+    left: 134px;
  }
 
  .nav{
     display: inline-block;
-    vertical-align: top;
-    margin-top: 25px;
-    margin-left: 263px;
+    margin-top: -10px;
     font-size: 13px;
+    position: absolute;
+    left: 587px;
  }
 
  .nav_a{
@@ -292,6 +263,7 @@ body{
     letter-spacing: 1px;
     color: black;
     text-decoration: none;
+    font-weight: 100;
  }
 
  .nav_a:active{
@@ -304,6 +276,7 @@ body{
     color: black;
     text-decoration: none;
     color: black;
+    font-weight: 100;
  }
 
  .expand_more_black{
@@ -316,16 +289,17 @@ body{
 
  .vr_style{
     width: 49px;
-    height: 23px;
-    margin-bottom: 12px;
-    margin-left: 17px;
+    position: absolute;
+    right: 361px;
+    top: 24px;
  }
 
  .serch_style{
     width: 20px;
     height: 20px;
-    margin-bottom: 13px;
-    margin-left: 20px;
+    position: absolute;
+    right: 319px;
+    top: 27px;
  }
 
  .button_style{
@@ -339,8 +313,8 @@ body{
     border: 0;
     padding: 0;
     vertical-align: top;
-    margin-top: 8px;
-    margin-left: 21px;
+    margin-top: 5px;
+    margin-left: 975px;
     position: relative;
  }
 
@@ -391,21 +365,7 @@ body{
 
 
 
- .el-carousel__item h3 {
-    color: #475669;
-    font-size: 18px;
-    opacity: 0.75;
-    line-height: 300px;
-    margin: 0;
-  }
-  
-  .el-carousel__item:nth-child(2n) {
-    background-color: #99a9bf;
-  }
-  
-  .el-carousel__item:nth-child(2n+1) {
-    background-color: #d3dce6;
-  }
+
 
 .bannerimg{
   width: 100%;
@@ -495,6 +455,24 @@ body{
 #Commodity_div2{
     display: none;
 }
+
+.Background_image_style{
+    margin-top: 35px;
+    width: 100%;
+    height: 600px;
+}
+
+.ant-carousel >>> .slick-dots li button {
+    height: 7px;
+    width: 40px;
+    background-color: white;
+    padding-right: 74px;
+}
+
+.ant-carousel >>> .slick-dots-bottom {
+    bottom: 36px;
+}
+
 
  
 
